@@ -1,0 +1,278 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  font-size: 62.5%;
+  --bg-global-light: #fff;
+  --bg-glogal-dark: hsl(240, 5%, 7%);
+  --bg-card-button-light: hsl(240, 9%, 89%);
+  --bg-card-button-dark: hsl(240, 6%, 17%);
+  --bg-card-button-selected-light: hsl(194, 97%, 31%);
+  --bg-card-button-selected-dark: rgb(16, 77, 99);
+  --tc-global-light: hsl(240, 6%, 21%);
+  --tc-global-dark: #fff;
+
+}
+body{
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+html .light{
+  background: var(--bg-global-light);
+}
+html .dark{
+  background: var(--bg-glogal-dark);
+}
+.light .timer{
+  color: var(--tc-global-light);
+}
+.dark .timer{
+  color: var(--tc-global-dark);
+}
+.light .controls button svg path{
+  fill: var(--tc-global-light);
+}
+.dark .controls button svg path{
+  fill: var(--tc-global-dark);
+}
+.light .sound-button{
+  background: var(--bg-card-button-light);
+}
+.dark .sound-button{
+  background: var(--bg-card-button-dark);
+}
+.light .sound-button svg path{
+  fill: var(--tc-global-light);
+}
+.dark .sound-button svg path{
+  fill: var(--tc-global-dark);
+}
+.mode{
+  position: absolute;
+  top: 6rem;
+  right: 6rem;
+}
+.hide{
+  display: none;
+}
+main{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+button{
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+#timer-side{
+  text-align: center;
+}
+span{
+  font-size: 12.61rem;
+  line-height: 14.8rem;
+}
+.timer{
+  margin-bottom: 1.7rem;
+}
+.controls{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.6rem;
+}
+#sounds-side{
+  display: grid;
+  grid-template-areas: "A B"
+  "C D";
+  gap: 3.2rem;
+}
+.florest{
+  grid-area: A;
+}
+.rain{
+  grid-area: B;
+}
+.house{
+  grid-area: C;
+}
+.fire{
+  grid-area: D;
+}
+
+.sound-button{
+  width: 13.8rem;
+  height: 15.2rem;
+  border-radius: 2.4rem;
+  transition: all 300ms;
+}
+
+.sound-button:hover{
+  scale: 1.1;
+}
+main .light .selected{
+  background: var(--bg-card-button-selected-light);
+}
+main .dark .selected{
+  background: var(--bg-card-button-selected-dark);
+}
+.light .selected svg path{
+  fill: var(--bg-global-light);
+}
+.dark .selected svg path{
+ fill: var(--bg-global-light);
+}
+.light .controls .clicked svg path{
+  fill: var(--bg-card-button-selected-light);
+}
+.dark .controls .clicked svg path{
+  fill: var(--bg-card-button-selected-dark);
+}
+.light .controls .increment-decrement-clicked svg path{
+  animation: clickedLight 500ms;
+}
+.dark .controls .increment-decrement-clicked svg path{
+  animation: clickedDark 500ms;
+}
+input[type=range] {
+  height: .5rem;
+  margin-top: 3.2rem;
+  -webkit-appearance: none;
+  width: 9rem;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: .5rem;
+  cursor: pointer;
+  background: var(--tc-global-light);
+  border-radius: 1rem;
+  border: none;
+}
+.selected input[type=range]::-webkit-slider-runnable-track {
+  background: var(--tc-global-dark);
+}
+.dark input[type=range]::-webkit-slider-runnable-track {
+  background: var(--tc-global-dark);
+}
+input[type=range]::-webkit-slider-thumb {
+  border: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1.5rem;
+  background: var(--tc-global-light);
+  cursor: pointer;
+}
+.selected input[type=range]::-webkit-slider-thumb {
+  background: var(--tc-global-dark);
+}
+.dark input[type=range]::-webkit-slider-thumb {
+  background: var(--tc-global-dark);
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: .5rem;
+  cursor: pointer;
+  background: var(--tc-global-light);
+  border-radius: 1rem;
+  border: none;
+}
+.selected input[type=range]::-moz-range-track {
+  background: var(--tc-global-dark);
+}
+.dark input[type=range]::-moz-range-track {
+  background: var(--tc-global-dark);
+}
+input[type=range]::-moz-range-thumb {
+  border: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1.5rem;
+  background: var(--tc-global-light);
+  cursor: pointer;
+}
+.selected input[type=range]::-moz-range-thumb {
+  background: var(--tc-global-dark);
+}
+.dark input[type=range]::-moz-range-thumb {
+  background: var(--tc-global-dark);
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: .5rem;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: var(--tc-global-light);
+  border: none;
+  border-radius: 1.5rem;
+}
+.selected input[type=range]::-ms-fill-lower {
+  background: var(--tc-global-dark);
+}
+.dark input[type=range]::-ms-fill-lower {
+  background: var(--tc-global-dark);
+}
+input[type=range]::-ms-fill-upper {
+  background: var(--tc-global-light);
+  border: none;
+  border-radius: 1.5rem;
+}
+.selected input[type=range]::-ms-fill-upper {
+  background: var(--tc-global-dark);
+}
+.dark input[type=range]::-ms-fill-upper {
+  background: var(--tc-global-dark);
+}
+input[type=range]::-ms-thumb {
+  border: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1.5rem;
+  background: var(--tc-global-light);
+  cursor: pointer;
+}
+.selected input[type=range]::-ms-thumb {
+  background: var(--tc-global-dark);
+}
+.dark input[type=range]::-ms-thumb {
+  background: var(--tc-global-dark);
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: var(--tc-global-light);
+}
+.selected input[type=range]:focus::-ms-fill-lower {
+  background: var(--tc-global-dark);
+}
+.dark input[type=range]:focus::-ms-fill-lower {
+  background: var(--tc-global-dark);
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: var(--tc-global-light);
+}
+.selected input[type=range]:focus::-ms-fill-upper {
+  background: var(--tc-global-dark);
+}
+.dark input[type=range]:focus::-ms-fill-upper {
+  background: var(--tc-global-dark);
+}
+@keyframes clickedLight {
+  50%{
+    fill: var(--bg-card-button-selected-light);
+  }
+}
+@keyframes clickedDark {
+  50%{
+    fill: var(--bg-card-button-selected-dark);
+  }
+}
